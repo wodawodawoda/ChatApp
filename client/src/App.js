@@ -4,17 +4,21 @@ import './App.css';
 
 class App extends Component {
   state = {
-    response: ''
+    response: '',
+    message: ''
   };
 
   componentDidMount() {
-    this.callApi()
+    this.callApi('/api/hello')
       .then(res => this.setState({ response: res.express }))
+      .catch(err => console.log(err));
+    this.callApi('/api/message')
+      .then(res => this.setState({ message: res.bobo }))
       .catch(err => console.log(err));
   }
 
-  callApi = async () => {
-    const response = await fetch('/api/hello');
+  callApi = async (url) => {
+    const response = await fetch(url);
     const body = await response.json();
 
     if (response.status !== 200) throw Error(body.message);
@@ -32,6 +36,7 @@ class App extends Component {
         <p className="App-intro">
           {this.state.response}
         </p>
+        <p>{this.state.message}</p>
       </div>
     );
   }
