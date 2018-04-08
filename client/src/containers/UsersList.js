@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 const UsersList = props => (
-  <section className="UsersList">
+  <section className="App__UsersList">
     <div className="UsersList__online">
       <p><span>{props.users.length}</span> people online</p>
     </div>

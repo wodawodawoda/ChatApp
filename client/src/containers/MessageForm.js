@@ -26,9 +26,9 @@ class MessageForm extends Component {
   }
   render() {
     return(
-      <form className="MessageForm__form" onSubmit={e => this.handleSubmit(e)}>
+      <form className="Messages__form" onSubmit={e => this.handleSubmit(e)}>
         <input
-          className="MessageForm__input"
+          className="Messages__input"
           onChange={e => this.handleChange(e)}
           value={this.state.text}
           placeholder='Message'

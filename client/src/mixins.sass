@@ -1,0 +1,22 @@
+=e($element)
+  &__#{$element}
+    @content
+
+=m($modifier)
+  &--#{$modifier}
+    @content
+=size($width, $height)
+  width: $width
+  height: $height
+
+=media($point)
+  @if $point == medium
+    @media (min-width: 767px)
+      @content
+  @else if $point == large
+    @media (min-width: 980px)
+      @content
+  @else if $point == xlarge
+    @media (min-width: 1200px)
+      @content
+

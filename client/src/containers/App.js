@@ -75,7 +75,7 @@ class App extends Component {
           <UsersList
             users={this.state.users}
           />
-          <section className="App__Message">
+          <section className="App__Messages Messages">
             <MessageList
               messages={this.state.messages}
             />
@@ -85,9 +85,9 @@ class App extends Component {
             />
           </section>
         </main>
-        <h2>fetched data</h2>
-      	<p>Helloho from /api/hello: {this.state.response}</p>
-     	<p>Text from /api/object: {this.state.objectText}</p>
+        {/*<h2>fetched data</h2>*/}
+      	{/*<p>Helloho from /api/hello: {this.state.response}</p>*/}
+     	{/*<p>Text from /api/object: {this.state.objectText}</p>*/}
       </div>
     );
   }
