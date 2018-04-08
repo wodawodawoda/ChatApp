@@ -14,5 +14,9 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:5000/"
+  "proxy": "http://localhost:5000/",
+  "devDependencies": {
+    "hot-module-replacement": "^3.0.0",
+    "react-hot-loader": "^4.0.1"
+  }
 }

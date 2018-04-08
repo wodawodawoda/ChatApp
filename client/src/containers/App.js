@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import io from 'socket.io-client';
+import {hot} from 'react-hot-loader';
 
 
 import MessageForm from './MessageForm';
@@ -97,4 +98,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default hot(module)(App);
