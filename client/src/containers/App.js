@@ -86,7 +86,7 @@ class App extends Component {
           </section>
         </main>
         <h2>fetched data</h2>
-      	<p>Hello from /api/hello: {this.state.response}</p>
+      	<p>Helloho from /api/hello: {this.state.response}</p>
      	<p>Text from /api/object: {this.state.objectText}</p>
       </div>
     );
