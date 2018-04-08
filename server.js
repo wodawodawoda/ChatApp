@@ -22,9 +22,9 @@ const io = socketIO(server);
 // Middleware for production
 // It serves basic React HTML template ('#root').
 app.use('/', express.static(`${__dirname}/build`));
-// app.get('/', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-// });
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'build/static', 'index.html'));
+});
 
 
 app.get('/api/object', (req, res) => {

@@ -8,7 +8,7 @@ const UsersList = props => (
     <ul className="UsersList__users">
       {props.users.map(user => {
         return(
-          <li key={user.id} className="UsersList__user">
+          <li key={user.id} className={user.name !== props.name ? 'UsersList__user' : 'UsersList__user UsersList__user--client'}>
             {user.name}
           </li>
         );

@@ -47,13 +47,16 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "build": "node scripts/build.js && mv build ../build",
     "test": "node scripts/test.js --env=jsdom"
   },
   "proxy": "http://localhost:5000/",
   "devDependencies": {
     "hot-module-replacement": "^3.0.0",
     "node-sass": "^4.8.3",
+    "node-sass-chokidar": "^1.2.2",
+    "npm-run-all": "^4.1.2",
     "react-hot-loader": "^4.0.1",
     "sass-loader": "^6.0.7"
   },
