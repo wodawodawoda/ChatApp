@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
+import io from 'socket.io-client';
 import logo from './logo.svg';
 import './App.css';
+const  socket = io('http://localhost:5000');
+
 
 class App extends Component {
   state = {
     response: '',
-    message: ''
+    message: '',
+    users: [],
+    messages: [],
+    text: '',
+    name: ''
   };
 
   componentDidMount() {
@@ -15,6 +22,12 @@ class App extends Component {
     this.callApi('/api/message')
       .then(res => this.setState({ message: res.bobo }))
       .catch(err => console.log(err));
+    socket.on(`test`, data => {
+      console.log(data, ' :socket data test')
+    })
+  }
+  sendMessage = message => {
+    socket.emit(`client:sendMessage`, message)
   }
 
   callApi = async (url) => {
@@ -24,7 +37,7 @@ class App extends Component {
     if (response.status !== 200) throw Error(body.message);
 
     return body;
-  };
+  }
 
   render() {
     return (
