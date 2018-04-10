@@ -18,6 +18,10 @@ class UserForm extends Component {
   }
   render() {
     return(
+      <div className="UserForm">
+        <img src="https://image.freepik.com/free-vector/chat-speech-bubble-icon_23-2147501656.jpg"
+             alt="logo"
+             className="UserForm__logo"/>
       <form className="UserForm__form" onSubmit={e => this.handleSubmit(e)}>
         <input
           className="UserForm__input"
@@ -26,6 +30,7 @@ class UserForm extends Component {
           value={this.state.name}
         />
       </form>
+      </div>
     );
   }
 }

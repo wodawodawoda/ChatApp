@@ -8,7 +8,7 @@ import MessageList from './MessageList';
 import UsersList from './UsersList';
 import UserForm from './UserForm';
 
-const socket = io('http://localhost:5000');
+const socket = io('/');
 
 class App extends Component {
   constructor (props) {

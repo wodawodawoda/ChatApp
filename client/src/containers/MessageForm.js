@@ -31,7 +31,7 @@ class MessageForm extends Component {
           className="Messages__input"
           onChange={e => this.handleChange(e)}
           value={this.state.text}
-          placeholder='Message'
+          placeholder='Write a message and press enter'
         />
       </form>
     );

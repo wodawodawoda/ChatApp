@@ -9,6 +9,7 @@ const Message = props => (
 
 const MessageList = props => (
   <div className="Messages__list">
+    <div className="Messages--padding"></div>
     {props.messages.map((message, idx) => {
       return(
         <Message
