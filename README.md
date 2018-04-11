@@ -20,12 +20,13 @@ Project was developed using:
 * create-react-app
 * ES6
 * HTML5
+
+## Client demo
+https://wodawodawoda.github.io/ChatApp/
+
 ```bash
 # To install dependencies, just go to the root and client folder and run
 npm i
-
-# Front demo
-https://wodawodawoda.github.io/ChatApp/
 
 # To build client production version go to ./client and run
 npm run build
