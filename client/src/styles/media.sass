@@ -1,0 +1,44 @@
+@media (max-width: 768px)
+  .App
+    grid-template-columns: 1fr
+    grid-template-rows: 10vh 90vh
+    max-width: 800px
+    margin: 0
+    width: 100%
+    justify-content: center
+    +e(body)
+      grid-template-columns: 1fr
+      grid-template-rows: 25% 75%
+    +e(Messages)
+      border-left: 5px solid $blue
+      height: 90vh
+
+    #toggle__list
+      display: flex
+      width: 100%
+      border: 1px solid #000
+      height: 48px
+      position: absolute
+      opacity: 0
+      &:checked ~ .App__UsersList
+        height: calc(90vh - 40px)
+    .App__UsersListnpm
+      overflow: hidden
+      height: 0
+      transition: 1s
+      background: $white
+    .toggle__wrapper
+      position: absolute
+      right: 0
+      left: 0
+      z-index: 1
+  .UsersList__online
+    &:after
+      position: absolute
+      right: 20px
+      content: ''
+      width: 20px
+      height: 20px
+      background: url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-512.png)
+      background-size: cover
+

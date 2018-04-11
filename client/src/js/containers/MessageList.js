@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 const Message = props => (
   <div className={props.from === props.name ? 'Messages__message Messages__message--client' : 'Messages__message'}>
     <div className="Messages__user">{props.from}</div>
     <div className="Messages__text">{props.text}</div>
   </div>
-)
+);
 
 const MessageList = props => (
   <div className="Messages__list">
@@ -23,4 +23,4 @@ const MessageList = props => (
   </div>
 );
 
-export default MessageList
+export default MessageList;

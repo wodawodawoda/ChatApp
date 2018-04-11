@@ -1,0 +1,21 @@
+.UserForm
+  display: flex
+  flex-flow: column nowrap
+  margin: auto
+  align-items: center
+  +e(form)
+  +e(input)
+    width: 100%
+    max-width: 300px
+    font-size: 1.5rem
+    background: $light-blue
+    color: white
+    font-weight: 900
+    padding: 10px
+    border: 5px dashed $white
+    &::-moz-placeholder
+      font-size: 0.6em
+      word-break: break-all
+  +e(logo)
+    width: 100%
+    max-width: 400px

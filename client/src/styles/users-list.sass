@@ -1,0 +1,35 @@
+#toggle__list
+  display: none
+.toggle__wrapper
+  display: flex
+  flex-flow: column
+
+.UsersList
+  background: white
+  +e(online)
+    display: flex
+    text-align: center
+    background: $gray
+    padding: 10px
+  +e(users)
+    text-decoration: none
+    list-style: none
+    flex: 1
+    display: flex
+    flex-flow: column nowrap
+    margin: 0
+    padding: 0
+  +e(user)
+    order: 1
+    padding: 20px 0 0 30px
+    &:before
+      content: '>'
+      color: red
+      padding-right: 10px
+    +m(client)
+      order: 0
+      background: #979797
+      padding: 20px 20px 20px 40px
+      &:before
+        content: ''
+        padding: 0

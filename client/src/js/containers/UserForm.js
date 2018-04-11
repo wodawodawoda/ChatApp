@@ -35,4 +35,4 @@ class UserForm extends Component {
   }
 }
 
-export default UserForm
+export default UserForm;

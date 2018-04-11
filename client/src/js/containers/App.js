@@ -8,6 +8,8 @@ import MessageList from './MessageList';
 import UsersList from './UsersList';
 import UserForm from './UserForm';
 
+import '../../styles/app.sass';
+
 const socket = io('/');
 
 class App extends Component {
@@ -24,27 +26,8 @@ class App extends Component {
     };
   }
   componentDidMount() {
-  	this.callApi('/api/hello')
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
-    this.callApi('/api/object')
-      .then(res => this.setState({ objectText: res.text }))
-      .catch(err => console.log(err));
-    socket.on('connect', function() {
-      console.log(socket.id)
-    });
-    socket.on('test', data => console.log(data, ' :socket data test'));
     socket.on('message', message => this.messageReceive(message));
     socket.on('update', ({users}) => this.chatUpdate(users));
-  }
-
-  callApi = async (url) => {
-    const response = await fetch(url);
-    const body = await response.json();
-
-    if (response.status !== 200) throw Error(body.message);
-
-    return body;
   }
 
   messageReceive(message) {
@@ -63,11 +46,13 @@ class App extends Component {
     this.setState({name});
     socket.emit('join', name)
   }
+
   render() {
     return(
       this.state.name !== '' ? this.renderLayout() : this.renderUserForm()
     );
   }
+
   renderLayout() {
     return (
       <div className="App">
@@ -91,9 +76,6 @@ class App extends Component {
             />
           </section>
         </main>
-        {/*<h2>fetched data</h2>*/}
-      	{/*<p>Helloho from /api/hello: {this.state.response}</p>*/}
-     	{/*<p>Text from /api/object: {this.state.objectText}</p>*/}
       </div>
     );
   }

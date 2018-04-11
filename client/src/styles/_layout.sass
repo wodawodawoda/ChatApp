@@ -1,0 +1,33 @@
+*
+  box-sizing: border-box
+  margin: 0
+
+.App
+  display: grid
+  grid-template-columns: 0.4fr 0.6fr
+  grid-template-rows: 80px 600px
+  max-width: 800px
+  margin: 40px auto
+  width: 100%
+  justify-content: center
+  +e(header)
+    grid-area: 1 / 1 / 2 / 6
+    display: flex
+    text-align: center
+    background: $blue
+    align-items: center
+  +e(title)
+    width: 40%
+  +e(room)
+    width: 60%
+  +e(body)
+    grid-area: 2/1/3/6
+    display: grid
+    grid-template-columns: 0.4fr 0.6fr
+  +e(UsersList)
+    display: flex
+    flex-flow: column nowrap
+    border: 10px solid $orange
+    height: 100%
+  +e(Messages)
+    border: 5px solid $blue

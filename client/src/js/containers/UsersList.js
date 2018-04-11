@@ -6,7 +6,7 @@ const UsersList = props => (
     <div className="UsersList__online">
       <p><span>{props.users.length}</span> people online</p>
     </div>
-    <section className="App__UsersList">
+    <section className="App__UsersList UsersList">
       <ul className="UsersList__users">
         {props.users.map(user => {
           return(
@@ -20,4 +20,4 @@ const UsersList = props => (
   </div>
 );
 
-export default UsersList
+export default UsersList;
